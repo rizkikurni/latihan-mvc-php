@@ -12,7 +12,7 @@
 
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
+  <div class="container-fluid ms-3">
     <a class="navbar-brand" href="<?= BASEURL ;?>">PHP MvC</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,12 +23,12 @@
           <a class="nav-link active" aria-current="page" href="<?= BASEURL ;?>">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="<?= BASEURL ;?>/buku">Buku</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="<?= BASEURL ;?>/about">About</a>
         </li>
         <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li> -->
       </ul>
