@@ -1,27 +1,23 @@
 <?php 
 
 class Buku_model {
-    private $dbh; //database handler
-    private $stmt;
+    private $tabel = 'bukuperpus'; //database handler
+    private $db;
 
-    // jangan simpan password dan username disini, ini hanya contoh
-    public function __construct()
-    {
-        // data source name
-        $dsn = 'mysql:host=localhost;dbname=daftarbuku';
-
-        try {
-            $this->dbh = new PDO($dsn, 'root', '');
-        } catch (PDOException $e) {
-            die($e->getMessage());
-        }
+    public function __construct(){
+        $this->db = new Database;
+        
     }
-    
 
     public function getAllBuku(){
-        $this->stmt = $this->dbh->prepare('SELECT * FROM bukuperpus');
-        $this->stmt->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+       $this->db->query('SELECT * FROM '. $this->tabel);
+       return $this->db->resultSet();
+    }
+
+    public function getBukuById($id){
+        $this->db->query('SELECT * FROM '. $this->tabel.' WHERE id=:id');
+        $this->db->bind('id', $id);
+        return $this->db->single();
     }
 }
 
