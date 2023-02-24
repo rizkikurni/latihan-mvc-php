@@ -19,6 +19,19 @@ class Buku_model {
         $this->db->bind('id', $id);
         return $this->db->single();
     }
+
+    public function tambahDataBuku($data){
+        $query = "INSERT INTO bukuperpus (judul, penulis, tahun, genre) VALUES (:judul, :penulis, :tahun, :genre)";
+        $this->db->query($query);
+        $this->db->bind('judul', $data['judul']);
+        $this->db->bind('penulis', $data['penulis']);
+        $this->db->bind('tahun', $data['tahun']);
+        $this->db->bind('genre', $data['genre']);
+
+        $this->db->execute();
+        return $this->db->rowCount();
+
+    }
 }
 
 ;?>

@@ -18,6 +18,13 @@ class Buku extends Controller {
         $this->view('templates/footer');
 
     }
+
+    public function tambah(){
+        if ($this->model('Buku_model')->tambahDataBuku($_POST)>0) {
+            header('Location: '. BASEURL .'/buku');
+            exit;
+        }
+    }
 }
 
 
