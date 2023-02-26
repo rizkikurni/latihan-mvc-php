@@ -16,9 +16,10 @@
 
                 <ul class="list-group">
                     <?php foreach($data['buku'] as $buku) :?>
-                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <li class="list-group-item">
                             <?= $buku['judul'] ;?>
-                            <a href="<?= BASEURL ;?>/buku/detail/<?= $buku['id'] ;?>" class="badge text-bg-primary">detail</a>
+                            <a href="<?= BASEURL ;8?>/buku/hapus/<?= $buku['id'] ;?>" class="badge text-bg-danger float-end ms-1" onclick="return confirm('yakin?');">hapus</a>
+                            <a href="<?= BASEURL ;?>/buku/detail/<?= $buku['id'] ;?>" class="badge text-bg-primary float-end ms-1">detail</a>
                         </li>
                         
                     <?php endforeach; ?>
