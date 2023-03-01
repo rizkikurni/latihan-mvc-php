@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-primary mb-2 tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
                 Tambah Data
             </button>
 
@@ -19,6 +19,7 @@
                         <li class="list-group-item">
                             <?= $buku['judul'] ;?>
                             <a href="<?= BASEURL ;8?>/buku/hapus/<?= $buku['id'] ;?>" class="badge text-bg-danger float-end ms-1" onclick="return confirm('yakin?');">hapus</a>
+                            <a href="<?= BASEURL ;?>/buku/ubah/<?= $buku['id'] ;?>" class="badge text-bg-success float-end ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="2">ubah</a>
                             <a href="<?= BASEURL ;?>/buku/detail/<?= $buku['id'] ;?>" class="badge text-bg-primary float-end ms-1">detail</a>
                         </li>
                         
@@ -30,11 +31,11 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="judulModal">Tambah Data Buku</h1>
+        <h1 class="modal-title fs-5" id="formModalLabel">Tambah Data Buku</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 

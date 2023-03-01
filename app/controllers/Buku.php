@@ -42,6 +42,10 @@ class Buku extends Controller {
             exit;
         }
     }
+
+    public function getUbah(){
+        echo 'ok';
+    }
 }
 
 
