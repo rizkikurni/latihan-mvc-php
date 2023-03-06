@@ -19,7 +19,7 @@
                         <li class="list-group-item">
                             <?= $buku['judul'] ;?>
                             <a href="<?= BASEURL ;8?>/buku/hapus/<?= $buku['id'] ;?>" class="badge text-bg-danger float-end ms-1" onclick="return confirm('yakin?');">hapus</a>
-                            <a href="<?= BASEURL ;?>/buku/ubah/<?= $buku['id'] ;?>" class="badge text-bg-success float-end ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="2">ubah</a>
+                            <a href="<?= BASEURL ;?>/buku/ubah/<?= $buku['id'] ;?>" class="badge text-bg-success float-end ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $buku['id'] ;?>">ubah</a>
                             <a href="<?= BASEURL ;?>/buku/detail/<?= $buku['id'] ;?>" class="badge text-bg-primary float-end ms-1">detail</a>
                         </li>
                         
@@ -41,6 +41,7 @@
 
       <div class="modal-body">
         <form action="<?= BASEURL ;?>/buku/tambah" method="post">
+            <input type="hidden" name="id" id="id">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Judul buku</label>
                 <input type="text" class="form-control" id="judul" name="judul">
